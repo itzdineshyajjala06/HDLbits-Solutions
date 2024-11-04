@@ -1,0 +1,13 @@
+module top_module (
+    input clk,
+    input [7:0] in,
+    output [7:0] pedge
+);
+    wire [7:0] w1;
+    always @(posedge clk) begin
+        w1<=in;
+        pedge<= (w1^in) & ~w1;
+        
+    end
+
+endmodule
